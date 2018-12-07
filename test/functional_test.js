@@ -359,7 +359,7 @@ describe('functional', () => {
 
             // ignore twitter-bootstrap versions after 2.3.2
             if (uri.includes('twitter-bootstrap')) {
-                const m = uri.match(/(\d+\.\d+\.\d+)/);
+                const m = uri.match(/(?<version>\d+\.\d+\.\d+)/);
 
                 // err on the side of testing things that can't be abstracted
                 if (m && m[1] && semver.valid(m[1]) && semver.gt(m[1], '2.3.2')) {
