@@ -6,6 +6,7 @@ const ENV = process.env;
 ENV.BCDN_HEADERS = ENV.BCDN_HEADERS || 'production';
 
 const assert = require('assert').strict;
+const url = require('url');
 const escapeStringRegexp = require('escape-string-regexp');
 const { htmlEncode } = require('htmlencode');
 const mockDate = require('mockdate');
@@ -141,7 +142,7 @@ function assertPageHeader(txt, res, cb) {
 }
 
 function assertCanonicalUrl(str, res, cb) {
-    const expected = `<link rel="canonical" href="${new URL(str, config.siteurl)}">`;
+    const expected = `<link rel="canonical" href="${url.resolve(config.siteurl, str)}">`;
 
     assert.ok(res.body.includes(expected), 'Expects page to have a canonical URL');
     cb();
