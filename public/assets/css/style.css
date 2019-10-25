@@ -1,6 +1,6 @@
 .navbar-brand > svg {
     display: inline-block;
-    margin-right: 0.5rem;
+    margin-right: .5rem;
     vertical-align: middle;
     width: 20px;
     height: 20px;
@@ -23,9 +23,9 @@
 }
 
 .input-group .dropdown-toggle::after {
-    transition: -webkit-transform 0.35s ease;
-    transition: transform 0.35s ease;
-    transition: transform 0.35s ease, -webkit-transform 0.35s ease;
+    transition: -webkit-transform .35s ease;
+    transition: transform .35s ease;
+    transition: transform .35s ease, -webkit-transform .35s ease;
 }
 
 .input-group .dropdown-toggle-open::after {
