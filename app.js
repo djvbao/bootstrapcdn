@@ -2,7 +2,6 @@
 
 const path    = require('path');
 const express = require('express');
-const mime    = require('mime');
 const uuidv4  = require('uuid/v4');
 const semver  = require('semver');
 
@@ -11,7 +10,7 @@ const ENV         = process.env;
 const NODE_ENV    = ENV.NODE_ENV || 'development';
 const PUBLIC_DIR  = path.join(__dirname, 'public');
 
-const customMime  = mime.define({
+const customMime  = express.static.mime.define({
     'text/javascript': ['js']
 }, true);
 
